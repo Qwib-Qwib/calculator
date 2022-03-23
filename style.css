@@ -1,0 +1,111 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator-body {
+    background-color: #78bea6;
+    border-radius: 30px;
+    height: 12.45cm;
+    width: 9.53cm;
+    position: relative;             /* Par défaut cette valeur est "static", mais les blocs ayant static comme position ne peuvent être considérés comme bloc contenant, et on veut que ce bloc contienne le reste de l'interface et serve de référence pour la positionner. */
+    display: flex;
+    flex-direction: column;
+}
+
+#calculator-screen {
+    background-color: #cee0e0;
+    height: 2.92cm;
+    width: 7.49cm;
+    font-size: 28pt;
+    font-family: 'Segment7Standard';
+    color: #424f62;
+    position: absolute;
+    top: 0.76cm;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-input {
+    position: relative;
+    top: 0.2cm;
+    align-self: flex-end;
+    right: 0.2cm;
+}
+
+.result {
+    position: relative;
+    align-self: flex-end;
+    right: 0.2cm;
+}
+
+#buttons-container {
+    position: absolute;
+    bottom: 2.4cm;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(4, auto);
+    column-gap: 0.51cm;
+    row-gap: 0.39cm;
+}
+
+button {
+    color: white;
+    height: 0.89cm;
+    width: 1.28cm;
+    font-size: 15pt;
+}
+
+.num {
+    background-color: #084351;
+}
+
+.erase {
+    background-color: #e45567;
+}
+
+button.random {
+    background-color: #c3a375;
+    color: #b3765a;
+}
+
+button.original {
+    background-color: #cee0e0;
+    color: #78bea6;
+}
+
+#brand {
+    width: 100%;
+    align-self: center;
+    position: absolute;
+    bottom: 0.50cm;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18pt;
+}
+
+#calculator-name {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18pt;
+    color: #003f34;
+    position: relative;
+    left: 0.40cm;
+}
+
+#calculator-type {
+    color: #8c4d62;
+    font-style: italic;
+    position: relative;
+    right: 0.40cm;
+}

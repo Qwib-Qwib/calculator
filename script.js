@@ -1,6 +1,9 @@
 const buttons = document.querySelectorAll("button");
 buttons.forEach(groupAddEventListener);
-let arrayInput =[]; 
+let num1 = "";
+let num2 = "";
+let operatorSign = "";
+let arrayNum2 =[]; 
 
 function add(x, y) {
     let addResult = x + y;
@@ -50,70 +53,89 @@ function displayOperation(event) {
     const buttonClasses = buttonPressed.classList;
     let displayedInput;
     if (buttonClasses[1] === "one") {
-        arrayInput.push("1");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("1");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "two") {
-        arrayInput.push("2");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("2");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     }  else if (buttonClasses[1] === "three") {
-        arrayInput.push("3");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("3");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "four") {
-        arrayInput.push("4");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("4");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "five") {
-        arrayInput.push("5");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("5");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "six") {
-        arrayInput.push("6");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("6");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "seven") {
-        arrayInput.push("7");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("7");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "eight") {
-        arrayInput.push("8");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("8");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "nine") {
-        arrayInput.push("9");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("9");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
+    } else if (buttonClasses[1] === "zero") {
+        arrayNum2.push("0");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
+        userInput.textContent = displayedInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "plus") {
-        arrayInput.push("2");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("2");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "minus") {
-        arrayInput.push("2");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("2");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "multiply") {
-        arrayInput.push("2");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("2");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     } else if (buttonClasses[1] === "divide") {
-        arrayInput.push("2");
-        displayedInput = arrayInput.reduce(aggregateInput);
+        arrayNum2.push("2");
+        num2 = arrayNum2.reduce(aggregateInput);
+        displayedInput = num1 + operatorSign + num2;
         userInput.textContent = displayedInput;
-        return arrayInput;
+        return arrayNum2;
     }
 }
 

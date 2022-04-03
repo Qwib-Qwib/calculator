@@ -164,9 +164,18 @@ function displayOperation(event) {
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "exe") {
+        if (num1 === "" && num2 !== "") {
+            updateUserInput(num1, num2, operatorSign, userInput);
+            currentResult.textContent = num2;
+        } else if (num1 === "" && num2 === "") {
+            num2 = 0;
+            updateUserInput(num1, num2, operatorSign, userInput);
+            currentResult.textContent = num2;
+        } else {
         let result = operate(num1, num2, operatorSign);
         updateUserInput(num1, num2, operatorSign, userInput);
         currentResult.textContent = result;
+        }
         arrayNum2 = [];
         return arrayDisplay;
     }

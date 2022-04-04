@@ -107,10 +107,14 @@ function displayOperation(event) {
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "floating") {
-        arrayNum2.push(".");
-        num2 = arrayNum2.reduce(aggregateInput);
-        updateUserInput(num1, num2, operatorSign, userInput);
-        return arrayDisplay;
+        if (arrayNum2.includes(".")) {
+            return;
+        } else {
+            arrayNum2.push(".");
+            num2 = arrayNum2.reduce(aggregateInput);
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return arrayDisplay;
+        }
     } else if (buttonClasses[1] === "plus") {
         if (num1 === "" || num1 === "0") {
             num1 = num2;

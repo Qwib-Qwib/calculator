@@ -178,6 +178,16 @@ function displayOperation(event) {
         }
         arrayNum2 = [];
         return arrayDisplay;
+    } else if (buttonClasses[1] === "backspace") {
+        if (arrayNum2.length !== 0) {                               // Apparemment (arrayNum2 !== []) ne permet pas de tester si un array est vide.
+            let arrayNum2LastSpot = arrayNum2.length - 1;
+            arrayNum2.splice(arrayNum2LastSpot, 1);
+            num2 = arrayNum2.reduce(aggregateInput, "");
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return arrayDisplay;
+        } else {
+            return;
+        }
     }
 }
 

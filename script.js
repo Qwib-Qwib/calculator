@@ -200,11 +200,25 @@ function displayOperation(event) {
     } else if (buttonClasses[1] === "floating") {
         if (arrayNum2.includes(".")) {
             return;
+        } else if (isExeLast === 1) {
+            num1 = "";
+            num2 = "0.";
+            operatorSign = "";
+            arrayNum2 = ["0", "."];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        } else if (arrayNum2.length === 0) {
+            arrayNum2.push("0");
+            arrayNum2.push(".");
+            num2 = arrayNum2.reduce(aggregateInput);
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
         } else {
             arrayNum2.push(".");
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
-            return arrayDisplay;
+            return isExeLast = 0;
         }
     } else if (buttonClasses[1] === "plus") {
         if (num1 === "" || num1 === "0") {

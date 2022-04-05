@@ -5,6 +5,7 @@ let num2 = "";
 let operatorSign = "";
 let arrayNum2 = []; 
 let arrayDisplay = [num1, operatorSign, num2, arrayNum2];
+let isExeLast = 0;
 
 function add(x, y) {
     let addResult = x + y;
@@ -57,51 +58,141 @@ function displayOperation(event) {
     const buttonClasses = buttonPressed.classList;
     let displayedInput;
     if (buttonClasses[1] === "one") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "1";
+            operatorSign = "";
+            arrayNum2 = ["1"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("1");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "two") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "2";
+            operatorSign = "";
+            arrayNum2 = ["2"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("2");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     }  else if (buttonClasses[1] === "three") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "3";
+            operatorSign = "";
+            arrayNum2 = ["3"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("3");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "four") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "4";
+            operatorSign = "";
+            arrayNum2 = ["4"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("4");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "five") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "5";
+            operatorSign = "";
+            arrayNum2 = ["5"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("5");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "six") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "6";
+            operatorSign = "";
+            arrayNum2 = ["6"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("6");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "seven") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "7";
+            operatorSign = "";
+            arrayNum2 = ["7"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("7");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "eight") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "8";
+            operatorSign = "";
+            arrayNum2 = ["8"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("8");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "nine") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "9";
+            operatorSign = "";
+            arrayNum2 = ["9"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("9");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
         return arrayDisplay;
     } else if (buttonClasses[1] === "zero") {
+        if (isExeLast === 1) {
+            num1 = "";
+            num2 = "0";
+            operatorSign = "";
+            arrayNum2 = ["0"];
+            currentResult.textContent = "";
+            updateUserInput(num1, num2, operatorSign, userInput);
+            return isExeLast = 0;
+        }
         arrayNum2.push("0");
         num2 = arrayNum2.reduce(aggregateInput);
         updateUserInput(num1, num2, operatorSign, userInput);
@@ -126,7 +217,7 @@ function displayOperation(event) {
         num2 = "";
         arrayNum2 = [];
         updateUserInput(num1, num2, operatorSign, userInput);
-        return arrayDisplay;
+        return isExeLast = 0;
     } else if (buttonClasses[1] === "minus") {
         if (num1 === "" || num1 === "0") {
             num1 = num2;
@@ -138,7 +229,7 @@ function displayOperation(event) {
         num2 = "";
         arrayNum2 = [];
         updateUserInput(num1, num2, operatorSign, userInput);
-        return arrayDisplay;
+        return isExeLast = 0;
     } else if (buttonClasses[1] === "multiply") {
         if (num2 === "" && num1 === "") {
             num1 = 1;
@@ -152,7 +243,7 @@ function displayOperation(event) {
         num2 = "";
         arrayNum2 = [];
         updateUserInput(num1, num2, operatorSign, userInput);
-        return arrayDisplay;
+        return isExeLast = 0;
     } else if (buttonClasses[1] === "divide") {
         if (num2 === "" && num1 === "") {
             num1 = 1;
@@ -166,7 +257,7 @@ function displayOperation(event) {
         num2 = "";
         arrayNum2 = [];
         updateUserInput(num1, num2, operatorSign, userInput);
-        return arrayDisplay;
+        return isExeLast = 0;
     } else if (buttonClasses[1] === "exe") {
         if (num1 === "" && num2 !== "") {
             updateUserInput(num1, num2, operatorSign, userInput);
@@ -181,7 +272,7 @@ function displayOperation(event) {
         currentResult.textContent = result;
         }
         arrayNum2 = [];
-        return arrayDisplay;
+        return isExeLast = 1;
     } else if (buttonClasses[1] === "backspace") {
         if (arrayNum2.length !== 0) {                               // Apparemment (arrayNum2 !== []) ne permet pas de tester si un array est vide.
             let arrayNum2LastSpot = arrayNum2.length - 1;
@@ -192,6 +283,14 @@ function displayOperation(event) {
         } else {
             return;
         }
+    } else if (buttonClasses[1] === "clear") {
+        num1 = "";
+        num2 = "";
+        operatorSign = "";
+        arrayNum2 = [];
+        currentResult.textContent = "";
+        updateUserInput(num1, num2, operatorSign, userInput);
+        return arrayDisplay;
     }
 }
 

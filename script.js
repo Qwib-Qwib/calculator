@@ -314,8 +314,19 @@ function aggregateInput(previousInput, currentInput) {
 }
 
 function updateUserInput(num1, num2, operatorSign, userInput) {
-    if (num1 < 0) {
+    let displayedInput = num1 + operatorSign + num2;
+    if (num1 < 0 && displayedInput.length < 10) {
         displayedInput = `(${num1})` + operatorSign + num2;
+    } else if (displayedInput.length >= 10 && num2.length < 5 && num1 > 0) {
+        displayedInput = Number(num1).toPrecision(1) + operatorSign + num2;
+    } else if (displayedInput.length >= 10 && num2.length < 5 && num1 < 0) {
+        displayedInput = `(${Number(num1).toPrecision(1)})` + operatorSign + num2;
+    } else if (displayedInput.length >= 10 && num2.length >= 5 && num1 > 0) {
+        displayedInput = Number(num1).toPrecision(1) + operatorSign + Number(num2).toPrecision(1);
+    } else if (displayedInput.length >= 10 && num2.length >= 5 && num1 < 0) {
+        displayedInput = `(${Number(num1).toPrecision(1)})` + operatorSign + Number(num2).toPrecision(1);
+    } else if (num2.length >= 10) {
+        displayedInput = num1 + operatorSign + Number(num2).toPrecision(6);
     } else {
         displayedInput = num1 + operatorSign + num2;
     }

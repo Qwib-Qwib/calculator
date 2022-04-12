@@ -221,11 +221,13 @@ function displayOperation(event) {
             return isExeLast = 0;
         }
     } else if (buttonClasses[1] === "plus") {
-        if (num1 === "" || num1 === "0") {
+        if (num2 === "" && num1 === "") {
+            num1 = 0;
+        } else if (num1 === "" || num1 === "0") {
             num1 = num2;
         } else if (operatorSign !== "" && num1 !== "" && num2 !== "") {
             num1 = operate(num1, num2, operatorSign);
-            currentResult.textContent = num1;
+            updateResult(num1, currentResult);
         }
         operatorSign = "+";
         num2 = "";
@@ -233,11 +235,13 @@ function displayOperation(event) {
         updateUserInput(num1, num2, operatorSign, userInput);
         return isExeLast = 0;
     } else if (buttonClasses[1] === "minus") {
-        if (num1 === "" || num1 === "0") {
+        if (num2 === "" && num1 === "") {
+            num1 = 0;
+        } else if (num1 === "" || num1 === "0") {
             num1 = num2;
         } else if (operatorSign !== "" && num1 !== "" && num2 !== "") {
             num1 = operate(num1, num2, operatorSign);
-            currentResult.textContent = num1;
+            updateResult(num1, currentResult);
         }
         operatorSign = "-";
         num2 = "";
@@ -246,12 +250,12 @@ function displayOperation(event) {
         return isExeLast = 0;
     } else if (buttonClasses[1] === "multiply") {
         if (num2 === "" && num1 === "") {
-            num1 = 1;
+            num1 = 0;
         } else if (num2 !== "" && num1 == "" && operatorSign == "") {
             num1 = num2;
         } else if (num2 !== "" && num1 !== "" && operatorSign !== "") {
             num1 = operate(num1, num2, operatorSign);
-            currentResult.textContent = num1;
+            updateResult(num1, currentResult);
         }
         operatorSign = "X";
         num2 = "";
@@ -260,12 +264,12 @@ function displayOperation(event) {
         return isExeLast = 0;
     } else if (buttonClasses[1] === "divide") {
         if (num2 === "" && num1 === "") {
-            num1 = 1;
+            num1 = 0;
         } else if (num2 !== "" && num1 == "" && operatorSign == "") {
             num1 = num2;
         } else if (num2 !== "" && num1 !== "" && operatorSign !== "") {
             num1 = operate(num1, num2, operatorSign);
-            currentResult.textContent = num1;
+            updateResult(num1, currentResult);
         }
         operatorSign = "/";
         num2 = "";
@@ -273,17 +277,22 @@ function displayOperation(event) {
         updateUserInput(num1, num2, operatorSign, userInput);
         return isExeLast = 0;
     } else if (buttonClasses[1] === "exe") {
-        if (num1 === "" && num2 !== "") {
+        if (num1 === "" && num2 !== "") {                           //L'utilisateur ne fait qu'entrer un chiffre et presse EXE.
             updateUserInput(num1, num2, operatorSign, userInput);
-            currentResult.textContent = num2;
-        } else if (num1 === "" && num2 === "") {
+            updateResult(num2, currentResult);
+        } else if (num1 === "" && num2 === "") {                    //L'utilisateur ne presse rien.
             num2 = 0;
             updateUserInput(num1, num2, operatorSign, userInput);
-            currentResult.textContent = num2;
+            updateResult(num2, currentResult);
+        } else if (num2 === "") {                                   //L'utilisateur presse un opérateur (soir après un chiffre, soit seul) puis rien.
+            num2 = 0;
+            let result = operate(num1, num2, operatorSign);
+            updateUserInput(num1, num2, operatorSign, userInput);
+            updateResult(result, currentResult);
         } else {
-        let result = operate(num1, num2, operatorSign);
-        updateUserInput(num1, num2, operatorSign, userInput);
-        currentResult.textContent = result;
+            let result = operate(num1, num2, operatorSign);
+            updateUserInput(num1, num2, operatorSign, userInput);
+            updateResult(result, currentResult);
         }
         arrayNum2 = [];
         return isExeLast = 1;
@@ -331,4 +340,14 @@ function updateUserInput(num1, num2, operatorSign, userInput) {
         displayedInput = num1 + operatorSign + num2;
     }
     userInput.textContent = displayedInput;
+}
+
+function updateResult(result, currentResult) {
+    if (typeof result === "string") {
+        currentResult.textContent = result;
+    } else if(result.toString().length >= 10) {
+        currentResult.textContent = Number(result).toPrecision(7);
+    } else {
+        currentResult.textContent = result;
+    }
 }

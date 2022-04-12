@@ -343,11 +343,11 @@ function updateUserInput(num1, num2, operatorSign, userInput) {
 }
 
 function updateResult(result, currentResult) {
-    if (typeof result === "string") {
+    if (result === "I AM ERROR") {
         currentResult.textContent = result;
     } else if(result.toString().length >= 10) {
         currentResult.textContent = Number(result).toPrecision(7);
     } else {
-        currentResult.textContent = result;
+        currentResult.textContent = Number(result);
     }
 }

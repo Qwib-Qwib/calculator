@@ -55,15 +55,60 @@ function initializeCalculator() {                               // Afin de prot√
     }
 
     function groupAddEventListener(element) {
-        element.addEventListener("click", displayOperation);
+        element.addEventListener("click", retrieveButton);
+        element.addEventListener("keydown", retrieveKey);
     }
 
-    function displayOperation(event) {
+    function retrieveButton(event) {
         const buttonPressed = event.currentTarget;
-        let userInput = document.getElementById("user-input");
-        let currentResult = document.getElementById("result");
         const buttonClasses = buttonPressed.classList;
         if (buttonClasses[1] === "one") {
+            displayOperation(1);
+        } else if (buttonClasses[1] === "two") {
+            displayOperation(2);
+        } else if (buttonClasses[1] === "three") {
+            displayOperation(3);
+        } else if (buttonClasses[1] === "four") {
+            displayOperation(4);
+        } else if (buttonClasses[1] === "five") {
+            displayOperation(5);
+        } else if (buttonClasses[1] === "six") {
+            displayOperation(6);
+        } else if (buttonClasses[1] === "seven") {
+            displayOperation(7);
+        } else if (buttonClasses[1] === "eight") {
+            displayOperation(8);
+        } else if (buttonClasses[1] === "nine") {
+            displayOperation(9);
+        } else if (buttonClasses[1] === "zero") {
+            displayOperation(0);
+        } else if (buttonClasses[1] === "floating") {
+            displayOperation("dot");
+        } else if (buttonClasses[1] === "plus") {
+            displayOperation("+");
+        } else if (buttonClasses[1] === "minus") {
+            displayOperation("-");
+        } else if (buttonClasses[1] === "multiply") {
+            displayOperation("*");
+        } else if (buttonClasses[1] === "divide") {
+            displayOperation("/");
+        } else if (buttonClasses[1] === "exe") {
+            displayOperation("EXE");
+        } else if (buttonClasses[1] === "backspace") {
+            displayOperation("ARROW");
+        } else if (buttonClasses[1] === "clear") {
+            displayOperation("AC");
+        } 
+    }
+
+    function retrieveKey(event) {
+
+    }
+
+    function displayOperation(inputNumber) {
+        let userInput = document.getElementById("user-input");
+        let currentResult = document.getElementById("result");
+        if (inputNumber === 1) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "1";
@@ -77,7 +122,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "two") {
+        } else if (inputNumber === 2) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "2";
@@ -91,7 +136,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        }  else if (buttonClasses[1] === "three") {
+        }  else if (inputNumber === 3) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "3";
@@ -105,7 +150,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "four") {
+        } else if (inputNumber === 4) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "4";
@@ -119,7 +164,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "five") {
+        } else if (inputNumber === 5) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "5";
@@ -133,7 +178,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "six") {
+        } else if (inputNumber === 6) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "6";
@@ -147,7 +192,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "seven") {
+        } else if (inputNumber === 7) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "7";
@@ -161,7 +206,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "eight") {
+        } else if (inputNumber === 8) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "8";
@@ -175,7 +220,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "nine") {
+        } else if (inputNumber === 9) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "9";
@@ -189,7 +234,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "zero") {
+        } else if (inputNumber === 0) {
             if (isExeLast === 1) {
                 num1 = "";
                 num2 = "0";
@@ -203,7 +248,7 @@ function initializeCalculator() {                               // Afin de prot√
             num2 = arrayNum2.reduce(aggregateInput);
             updateUserInput(num1, num2, operatorSign, userInput);
             return arrayDisplay;
-        } else if (buttonClasses[1] === "floating") {
+        } else if (inputNumber === "dot") {
             if (arrayNum2.includes(".")) {
                 return;
             } else if (isExeLast === 1) {
@@ -226,7 +271,7 @@ function initializeCalculator() {                               // Afin de prot√
                 updateUserInput(num1, num2, operatorSign, userInput);
                 return isExeLast = 0;
             }
-        } else if (buttonClasses[1] === "plus") {
+        } else if (inputNumber === "+") {
             if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
                 num1 = 0;
             } else if (num1 === "" || num1 === "0") {
@@ -240,7 +285,7 @@ function initializeCalculator() {                               // Afin de prot√
             arrayNum2 = [];
             updateUserInput(num1, num2, operatorSign, userInput);
             return isExeLast = 0;
-        } else if (buttonClasses[1] === "minus") {
+        } else if (inputNumber === "-") {
             if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
                 num1 = 0;
             } else if (num1 === "" || num1 === "0") {
@@ -254,7 +299,7 @@ function initializeCalculator() {                               // Afin de prot√
             arrayNum2 = [];
             updateUserInput(num1, num2, operatorSign, userInput);
             return isExeLast = 0;
-        } else if (buttonClasses[1] === "multiply") {
+        } else if (inputNumber === "*") {
             if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
                 num1 = 0;
             } else if (num2 !== "" && num1 == "" && operatorSign == "") {
@@ -268,7 +313,7 @@ function initializeCalculator() {                               // Afin de prot√
             arrayNum2 = [];
             updateUserInput(num1, num2, operatorSign, userInput);
             return isExeLast = 0;
-        } else if (buttonClasses[1] === "divide") {
+        } else if (inputNumber === "/") {
             if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
                 num1 = 0;
             } else if (num2 !== "" && num1 == "" && operatorSign == "") {
@@ -282,7 +327,7 @@ function initializeCalculator() {                               // Afin de prot√
             arrayNum2 = [];
             updateUserInput(num1, num2, operatorSign, userInput);
             return isExeLast = 0;
-        } else if (buttonClasses[1] === "exe") {
+        } else if (inputNumber === "EXE") {
             if (num1 === "" && num2 !== "") {                           //L'utilisateur ne fait qu'entrer un chiffre et presse EXE.
                 updateUserInput(num1, num2, operatorSign, userInput);
                 updateResult(num2, currentResult);
@@ -302,7 +347,7 @@ function initializeCalculator() {                               // Afin de prot√
             }
             arrayNum2 = [];
             return isExeLast = 1;
-        } else if (buttonClasses[1] === "backspace") {
+        } else if (inputNumber === "ARROW") {
             if (arrayNum2.length !== 0) {                               // Apparemment (arrayNum2 !== []) ne permet pas de tester si un array est vide.
                 let arrayNum2LastSpot = arrayNum2.length - 1;
                 arrayNum2.splice(arrayNum2LastSpot, 1);
@@ -312,7 +357,7 @@ function initializeCalculator() {                               // Afin de prot√
             } else {
                 return isExeLast = 0;
             }
-        } else if (buttonClasses[1] === "clear") {
+        } else if (inputNumber === "AC") {
             num1 = "";
             num2 = "";
             operatorSign = "";

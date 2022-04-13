@@ -221,7 +221,7 @@ function displayOperation(event) {
             return isExeLast = 0;
         }
     } else if (buttonClasses[1] === "plus") {
-        if (num2 === "" && num1 === "") {
+        if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
             num1 = 0;
         } else if (num1 === "" || num1 === "0") {
             num1 = num2;
@@ -235,7 +235,7 @@ function displayOperation(event) {
         updateUserInput(num1, num2, operatorSign, userInput);
         return isExeLast = 0;
     } else if (buttonClasses[1] === "minus") {
-        if (num2 === "" && num1 === "") {
+        if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
             num1 = 0;
         } else if (num1 === "" || num1 === "0") {
             num1 = num2;
@@ -249,7 +249,7 @@ function displayOperation(event) {
         updateUserInput(num1, num2, operatorSign, userInput);
         return isExeLast = 0;
     } else if (buttonClasses[1] === "multiply") {
-        if (num2 === "" && num1 === "") {
+        if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
             num1 = 0;
         } else if (num2 !== "" && num1 == "" && operatorSign == "") {
             num1 = num2;
@@ -263,7 +263,7 @@ function displayOperation(event) {
         updateUserInput(num1, num2, operatorSign, userInput);
         return isExeLast = 0;
     } else if (buttonClasses[1] === "divide") {
-        if (num2 === "" && num1 === "") {
+        if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
             num1 = 0;
         } else if (num2 !== "" && num1 == "" && operatorSign == "") {
             num1 = num2;
@@ -302,9 +302,9 @@ function displayOperation(event) {
             arrayNum2.splice(arrayNum2LastSpot, 1);
             num2 = arrayNum2.reduce(aggregateInput, "");
             updateUserInput(num1, num2, operatorSign, userInput);
-            return arrayDisplay;
+            return isExeLast = 0;
         } else {
-            return;
+            return isExeLast = 0;
         }
     } else if (buttonClasses[1] === "clear") {
         num1 = "";
@@ -313,7 +313,7 @@ function displayOperation(event) {
         arrayNum2 = [];
         currentResult.textContent = "";
         updateUserInput(num1, num2, operatorSign, userInput);
-        return arrayDisplay;
+        return isExeLast = 0;
     }
 }
 

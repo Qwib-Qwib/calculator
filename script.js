@@ -61,7 +61,6 @@ function displayOperation(event) {
     let userInput = document.getElementById("user-input");
     let currentResult = document.getElementById("result");
     const buttonClasses = buttonPressed.classList;
-    let displayedInput;
     if (buttonClasses[1] === "one") {
         if (isExeLast === 1) {
             num1 = "";

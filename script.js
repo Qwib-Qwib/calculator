@@ -12,6 +12,7 @@ function initializeCalculator() {                               // Afin de prot√
     function placeEventListeners() {
         const buttons = document.querySelectorAll("button");
         buttons.forEach(groupAddEventListener);
+        document.addEventListener("keydown", retrieveKey);
     }
 
     function add(x, y) {
@@ -56,7 +57,6 @@ function initializeCalculator() {                               // Afin de prot√
 
     function groupAddEventListener(element) {
         element.addEventListener("click", retrieveButton);
-        element.addEventListener("keydown", retrieveKey);
     }
 
     function retrieveButton(event) {
@@ -102,7 +102,43 @@ function initializeCalculator() {                               // Afin de prot√
     }
 
     function retrieveKey(event) {
-
+        if (event.key === "1") {
+            displayOperation(1);
+        } else if (event.key === "2") {
+            displayOperation(2);
+        } else if (event.key === "3") {
+            displayOperation(3);
+        } else if (event.key === "4") {
+            displayOperation(4);
+        } else if (event.key === "5") {
+            displayOperation(5);
+        } else if (event.key === "6") {
+            displayOperation(6);
+        } else if (event.key === "7") {
+            displayOperation(7);
+        } else if (event.key === "8") {
+            displayOperation(8);
+        } else if (event.key === "9") {
+            displayOperation(9);
+        } else if (event.key === "0") {
+            displayOperation(0);
+        } else if (event.key === ".") {
+            displayOperation("dot");
+        } else if (event.key === "+") {
+            displayOperation("+");
+        } else if (event.key === "-") {
+            displayOperation("-");
+        } else if (event.key === "*") {
+            displayOperation("*");
+        } else if (event.key === "/") {
+            displayOperation("/");
+        } else if (event.key === "Enter") {
+            displayOperation("EXE");
+        } else if (event.key === "Backspace") {
+            displayOperation("ARROW");
+        } else if (event.key === "Escape") {
+            displayOperation("AC");
+        } 
     }
 
     function displayOperation(inputNumber) {

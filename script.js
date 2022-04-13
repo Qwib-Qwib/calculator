@@ -1,11 +1,16 @@
-const buttons = document.querySelectorAll("button");
-buttons.forEach(groupAddEventListener);
+placeEventListeners();
+
 let num1 = "";
 let num2 = "";
 let operatorSign = "";
 let arrayNum2 = []; 
 let arrayDisplay = [num1, operatorSign, num2, arrayNum2];
 let isExeLast = 0;
+
+function placeEventListeners() {
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(groupAddEventListener);
+}
 
 function add(x, y) {
     let addResult = x + y;

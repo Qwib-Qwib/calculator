@@ -368,6 +368,10 @@ function initializeCalculator() {                               // Afin de prot√
         } else if (inputNumber === "+") {
             if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
                 num1 = 0;
+            } else if (operatorSign === "/" && num2 === "0") {
+                updateResult("I AM ERROR", currentResult);
+                arrayNum2 = [];
+                return isExeLast = 1;                                           // Ce retour simule la pression de la touche EXE car on veut r√©initialiser la calculatrice en cas d'erreur, comme avec l'EXE.
             } else if (num1 === "" || num1 === "0") {
                 num1 = num2;
             } else if (operatorSign !== "" && num1 !== "" && num2 !== "") {
@@ -382,6 +386,10 @@ function initializeCalculator() {                               // Afin de prot√
         } else if (inputNumber === "-") {
             if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
                 num1 = 0;
+            } else if (operatorSign === "/" && num2 === "0") {
+                updateResult("I AM ERROR", currentResult);
+                arrayNum2 = [];
+                return isExeLast = 1;                                           // Ce retour simule la pression de la touche EXE car on veut r√©initialiser la calculatrice en cas d'erreur, comme avec l'EXE.
             } else if (num1 === "" || num1 === "0") {
                 num1 = num2;
             } else if (operatorSign !== "" && num1 !== "" && num2 !== "") {
@@ -396,6 +404,10 @@ function initializeCalculator() {                               // Afin de prot√
         } else if (inputNumber === "*") {
             if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
                 num1 = 0;
+            } else if (operatorSign === "/" && num2 === "0") {
+                updateResult("I AM ERROR", currentResult);
+                arrayNum2 = [];
+                return isExeLast = 1;                                           // Ce retour simule la pression de la touche EXE car on veut r√©initialiser la calculatrice en cas d'erreur, comme avec l'EXE.
             } else if (num2 !== "" && num1 == "" && operatorSign == "") {
                 num1 = num2;
             } else if (num2 !== "" && num1 !== "" && operatorSign !== "") {
@@ -410,6 +422,10 @@ function initializeCalculator() {                               // Afin de prot√
         } else if (inputNumber === "/") {
             if ((num2 === "" && num1 === "") || currentResult.textContent === "I AM ERROR") {
                 num1 = 0;
+            } else if (operatorSign === "/" && num2 === "0") {
+                updateResult("I AM ERROR", currentResult);
+                arrayNum2 = [];
+                return isExeLast = 1;                                           // Ce retour simule la pression de la touche EXE car on veut r√©initialiser la calculatrice en cas d'erreur, comme avec l'EXE.
             } else if (num2 !== "" && num1 == "" && operatorSign == "") {
                 num1 = num2;
             } else if (num2 !== "" && num1 !== "" && operatorSign !== "") {

@@ -84,6 +84,10 @@ button.original {
     color: #78bea6;
 }
 
+button.keyPressed {
+    border-style: inset;
+}
+
 #brand {
     width: 100%;
     align-self: center;

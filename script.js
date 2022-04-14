@@ -104,41 +104,99 @@ function initializeCalculator() {                               // Afin de prot√
     function retrieveKey(event) {
         if (event.key === "1") {
             displayOperation(1);
+            const linkedButton = document.querySelector(".one");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "2") {
             displayOperation(2);
+            const linkedButton = document.querySelector(".two");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "3") {
             displayOperation(3);
+            const linkedButton = document.querySelector(".three");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "4") {
             displayOperation(4);
+            const linkedButton = document.querySelector(".four");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "5") {
             displayOperation(5);
+            const linkedButton = document.querySelector(".five");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "6") {
             displayOperation(6);
+            const linkedButton = document.querySelector(".six");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "7") {
             displayOperation(7);
+            const linkedButton = document.querySelector(".seven");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "8") {
             displayOperation(8);
+            const linkedButton = document.querySelector(".eight");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "9") {
             displayOperation(9);
+            const linkedButton = document.querySelector(".nine");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "0") {
             displayOperation(0);
+            const linkedButton = document.querySelector(".zero");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === ".") {
             displayOperation("dot");
+            const linkedButton = document.querySelector(".floating");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "+") {
             displayOperation("+");
+            const linkedButton = document.querySelector(".plus");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "-") {
             displayOperation("-");
+            const linkedButton = document.querySelector(".minus");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "*") {
             displayOperation("*");
+            const linkedButton = document.querySelector(".multiply");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "/") {
             displayOperation("/");
+            const linkedButton = document.querySelector(".divide");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "Enter") {
             displayOperation("EXE");
+            const linkedButton = document.querySelector(".exe");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "Backspace") {
             displayOperation("ARROW");
+            const linkedButton = document.querySelector(".backspace");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } else if (event.key === "Escape") {
             displayOperation("AC");
+            const linkedButton = document.querySelector(".clear");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
         } 
+    }
+
+    function unpressButton(linkedButton) {
+        linkedButton.classList.toggle("keyPressed");
     }
 
     function displayOperation(inputNumber) {
@@ -403,7 +461,6 @@ function initializeCalculator() {                               // Afin de prot√
             return isExeLast = 0;
         }
     }
-
 
     function aggregateInput(previousInput, currentInput) {
         return currentInput = previousInput + currentInput;

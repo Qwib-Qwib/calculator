@@ -529,9 +529,10 @@ function initializeCalculator() {                               // Afin de prot√
                     randomColor += "f";
                 }
             }
-            calculatorBody.style.backgroundColor=`${randomColor}`;
+            calculatorBody.style.backgroundColor = `${randomColor}`;
         } else if (inputNumber === "ORI") {
-
+            const calculatorBody = document.getElementById("calculator-body");
+            calculatorBody.style.backgroundColor = "#78bea6";
         }
     }
 

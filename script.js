@@ -98,6 +98,10 @@ function initializeCalculator() {                               // Afin de prot√
             displayOperation("ARROW");
         } else if (buttonClasses[1] === "clear") {
             displayOperation("AC");
+        } else if (buttonClasses[0] === "random") {
+            displayOperation("RAN");
+        } else if (buttonClasses[0] === "original") {
+            displayOperation("ORI");
         } 
     }
 
@@ -190,6 +194,16 @@ function initializeCalculator() {                               // Afin de prot√
         } else if (event.key === "Escape") {
             displayOperation("AC");
             const linkedButton = document.querySelector(".clear");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
+        }  else if (event.key === "r") {
+            displayOperation("RAN");
+            const linkedButton = document.querySelector(".random");
+            linkedButton.classList.toggle("keyPressed");
+            setTimeout(unpressButton, 70, linkedButton); 
+        }  else if (event.key === "o") {
+            displayOperation("ORI");
+            const linkedButton = document.querySelector(".original");
             linkedButton.classList.toggle("keyPressed");
             setTimeout(unpressButton, 70, linkedButton); 
         } 
@@ -475,6 +489,49 @@ function initializeCalculator() {                               // Afin de prot√
             currentResult.textContent = "";
             updateUserInput(num1, num2, operatorSign, userInput);
             return isExeLast = 0;
+        } else if (inputNumber === "RAN") {
+            const calculatorBody = document.getElementById("calculator-body");
+            let randomColor = "#";
+            let randomValue;
+            for (let i = 0; i < 6; i++) {                       // On veut 6 it√©rations pour faire un code HEX complet, on entre donc i < 6.
+                randomValue = Math.floor(Math.random()*16);     // On a 16 possibilit√©s de caract√®res diff√©rentes pour chaque caract√®re du code HEX, donc on multiplie le random par 16.
+                if (randomValue == 0) {
+                    randomColor += "0";
+                } else if (randomValue == 1) {
+                    randomColor += "1";
+                } else if (randomValue == 2) {
+                    randomColor += "2";
+                } else if (randomValue == 3) {
+                    randomColor += "3";
+                } else if (randomValue == 4) {
+                    randomColor += "4";
+                } else if (randomValue == 5) {
+                    randomColor += "5";
+                } else if (randomValue == 6) {
+                    randomColor += "6";
+                } else if (randomValue == 7) {
+                    randomColor += "7";
+                } else if (randomValue == 8) {
+                    randomColor += "8";
+                } else if (randomValue == 9) {
+                    randomColor += "9";
+                } else if (randomValue == 10) {
+                    randomColor += "a";
+                } else if (randomValue == 11) {
+                    randomColor += "b";
+                } else if (randomValue == 12) {
+                    randomColor += "c";
+                } else if (randomValue == 13) {
+                    randomColor += "d";
+                } else if (randomValue == 14) {
+                    randomColor += "e";
+                } else if (randomValue == 15) {
+                    randomColor += "f";
+                }
+            }
+            calculatorBody.style.backgroundColor=`${randomColor}`;
+        } else if (inputNumber === "ORI") {
+
         }
     }
 
